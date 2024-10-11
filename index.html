@@ -14,7 +14,7 @@
           top: 0;
           left: 0;
           width: 100%;
-          height: 64px; /* Ajuste la hauteur si nécessaire */
+          height: 48px; /* Ajuste la hauteur si nécessaire */
           pointer-events: none;
           z-index: 999;
           background: linear-gradient(to bottom, #F5F3EF, rgba(245, 243, 239, 0));
@@ -26,11 +26,21 @@
           bottom: 0;
           left: 0;
           width: 100%;
-          height: 64px; /* Ajuste la hauteur si nécessaire */
+          height: 48px; /* Ajuste la hauteur si nécessaire */
           pointer-events: none;
           z-index: 999;
           background: linear-gradient(to top, #F5F3EF, rgba(245, 243, 239, 0));
       }
+
+      .custom-status-bar {
+            background-color: #F5F3EF; /* Couleur personnalisée */
+            height: 20px; /* Hauteur de la barre d'état */
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* S'assure que cela soit au-dessus du contenu */
+        }
   </style>    
     <!-- End of headStart -->
     <meta name="viewport" content="width=device-width">
@@ -87,6 +97,7 @@
       </script>   
 <div class="fade-top"></div>
 <div class="fade-bottom"></div>  
+<div class="custom-status-bar"></div>
     <!-- End of bodyEnd -->
 </body>
 
