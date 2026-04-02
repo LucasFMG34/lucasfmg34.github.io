@@ -68,18 +68,27 @@
 </div>
 	<!-- Start of bodyEnd -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Supprime le badge Framer
-    var badgeContainer = document.getElementById('__framer-badge-container');
-    if (badgeContainer) {
-      badgeContainer.parentNode.removeChild(badgeContainer);
+  // On crée un observateur qui surveille les changements sur la page en temps réel
+  const observer = new MutationObserver(function(mutations) {
+    
+    // 1. On cible et on supprime le bouton d'édition s'il apparaît
+    const editorBar = document.getElementById('__framer-editorbar-container');
+    if (editorBar) {
+      editorBar.remove();
     }
     
-    // Supprime le bouton d'édition Framer
-    var editorBar = document.getElementById('__framer-editorbar-container');
-    if (editorBar) {
-      editorBar.parentNode.removeChild(editorBar);
+    // 2. On cible et on supprime le badge Framer s'il apparaît
+    const badgeContainer = document.getElementById('__framer-badge-container');
+    if (badgeContainer) {
+      badgeContainer.remove();
     }
+    
+  });
+
+  // On lance la surveillance sur tout le corps de la page
+  observer.observe(document.body, { 
+    childList: true, 
+    subtree: true 
   });
 </script>
     <!-- End of bodyEnd -->
